@@ -26,4 +26,27 @@ public class Restaurant {
 	public ArrayList<Food> getMenu() {
 		return menu;
 	}
+	
+	public void drawMenu(PApplet marker) {
+		
+		marker.fill(0);
+		int x = 30; 
+		int y = 30;
+		for(Food e : menu) {
+			
+			marker.text(e.getName(), x, y);
+			marker.text(e.getCalories() + "", x, y+30);
+			
+			x += 100;
+			
+			if(x % 120 == 0) {
+				
+				
+				y += 100;
+			}
+			
+			
+		}
+	}
+	
 }
