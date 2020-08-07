@@ -5,16 +5,16 @@ public class Food {
 	
 	private String name;
 	private int calories;
-	private PImage image;
+	private String filename;
 
-	public Food(PImage image, String name, int calories) {
-		this.image = image;
+	public Food(String filename, String name, int calories) {
+		this.filename = filename;
 		this.name = name;
 		this.calories = calories;
 	}
 	
-	public PImage getImage() {
-		return image;
+	public String getFilename() {
+		return filename;
 	}
 	
 	public String getName(){
@@ -24,5 +24,11 @@ public class Food {
 	
 	public int getCalories() {
 		return calories;
+	}
+	
+	public void draw(PApplet marker, float x, float y) {
+		
+		PImage image = marker.loadImage(filename);
+		marker.image(image, x, y, 40, 40);
 	}
 }

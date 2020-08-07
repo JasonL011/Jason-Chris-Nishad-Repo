@@ -36,6 +36,7 @@ public class Restaurant {
 			
 			marker.text(e.getName(), x, y);
 			marker.text(e.getCalories() + "", x, y+30);
+			e.draw(marker, x , y + 40);
 			
 			x += 100;
 			
