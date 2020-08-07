@@ -4,16 +4,16 @@ import java.util.Arrays;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class DrawingSurface extends PApplet {
+public class CalorieHub extends PApplet {
 	
 	
-	private Restaurant ininout;
+	private Restaurant innout;
 
-	private ArrayList<Food> ininoutmenu = new ArrayList<Food>(Arrays.asList(new Food("download.jpg","dog",500)));
+	private ArrayList<Food> innoutmenu = new ArrayList<Food>(Arrays.asList(new Food("download.jpg", "Double Double", 500)));
 	
-	public DrawingSurface() {
+	public CalorieHub() {
 		
-		ininout = new Restaurant( "in and out", null, ininoutmenu);
+		innout = new Restaurant( "in and out", null, innoutmenu);
 	}
 	
 	// The statements in the setup() function 
@@ -28,7 +28,7 @@ public class DrawingSurface extends PApplet {
 	
 	public void draw() {
 		
-		ininout.drawMenu(this);
+		innout.drawMenu(this);
 	
 		
 //		if(mouseButton == LEFT) {

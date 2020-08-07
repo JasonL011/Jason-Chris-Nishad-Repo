@@ -7,6 +7,7 @@ public class Food {
 	private int calories;
 	private String filename;
 
+
 	public Food(String filename, String name, int calories) {
 		this.filename = filename;
 		this.name = name;
