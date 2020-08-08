@@ -9,13 +9,13 @@ public class CalorieHub extends PApplet {
 	
 	private Restaurant innout;
 	private ArrayList<Food> cart = new ArrayList<Food>();
-	private You you;
+	private Customer you;
 	
 	
 	public CalorieHub() {
 		
 		innout = new Restaurant("In n Out Burger", "in n out.jpeg", null);
-		you = new You(cart);
+		you = new Customer(cart);
 		
 	}
 	
@@ -23,14 +23,8 @@ public class CalorieHub extends PApplet {
 	// execute once when the program begins
 	public void setup() {
 		
+		background(211, 211, 211);
 		innout.makeRes();
-		fill(211, 211, 211);
-		noStroke();
-		rect(300, 860, 600, 50);
-		fill(255);
-		textSize(40);
-		text("Total Calories in Cart: " + 0, 300, 900);
-		
 	}
 	
 	public void draw() {

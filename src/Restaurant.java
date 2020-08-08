@@ -60,12 +60,15 @@ public class Restaurant {
 		
 		marker.fill(0);
 		marker.textSize(15);
-		marker.rect(1250, 0, 1, 10000);
+		marker.rect(1250, 0, 2, 10000);
+		marker.textSize(30);
+		marker.text("Menu", 30, 30);
+		
 		int x = 30; 
-		int y = 30;
+		int y = 80;
 		for(Food e : menu) {
 			
-			
+			marker.textSize(15);
 			marker.text(e.getName() + " - " + e.getCalories(), x, y);
 			e.draw(marker, x , y + 12);
 			
