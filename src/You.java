@@ -7,7 +7,7 @@ public class You {
 	private ArrayList<Food> cart = new ArrayList<Food>();
 	private boolean canPick = true;
 	private boolean overload = false;
-	private final int AVGCALORIECOUNT = 3000;
+	private final int AVGCALORIECOUNT = 2400;
 	public You(ArrayList<Food> cart) {
 		
 		this.cart = cart;
@@ -48,7 +48,7 @@ public class You {
 		
 		marker.fill(0);
 		marker.textSize(10);
-		marker.rect(1250, 0, 1, 10000);
+		marker.rect(1250, 0, 1, 1000);
 		int x = 1280; 
 		int y = 30;
 		if(overload == false) {
@@ -62,7 +62,7 @@ public class You {
 				
 				if (x >= 1850) {
 					x = 1280;
-					y += 120;
+					y += 150;
 				}
 				
 				
@@ -84,11 +84,16 @@ public class You {
 					}
 						
 				}
-				marker.fill(0);
-				marker.rect(450, 770, 300, 200);
+				if (overload == true) {
+					marker.textSize(30);
+					marker.text("That is over the recommended daily average intake of calories!", 300, 950);
+				}
+				marker.fill(211, 211, 211);
+				marker.stroke(201, 201, 201);
+				marker.rect(300, 860, 490, 50);
 				marker.fill(255);
-				marker.textSize(100);
-				marker.text(sum + "", 450, 900);
+				marker.textSize(40);
+				marker.text("Total Calories in Cart: " + sum, 300, 900);
 	}
 }
 	

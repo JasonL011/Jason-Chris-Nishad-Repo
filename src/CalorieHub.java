@@ -22,10 +22,7 @@ public class CalorieHub extends PApplet {
 	// The statements in the setup() function 
 	// execute once when the program begins
 	public void setup() {
-		
 		innout.makeRes();
-		
-		
 		
 	}
 	
