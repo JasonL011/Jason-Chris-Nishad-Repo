@@ -83,6 +83,7 @@ public class You {
 				for(Food e: cart) {
 					if(sum < AVGCALORIECOUNT) {
 						sum += e.getCalories();
+						overload = false;
 					}
 					else {
 						overload = true;
@@ -94,8 +95,8 @@ public class You {
 					marker.text("That is over the recommended daily average intake of calories!", 300, 950);
 				}
 				marker.fill(211, 211, 211);
-				marker.stroke(201, 201, 201);
-				marker.rect(300, 860, 490, 50);
+				marker.noStroke();
+				marker.rect(300, 860, 600, 50);
 				marker.fill(255);
 				marker.textSize(40);
 				marker.text("Total Calories in Cart: " + sum, 300, 900);
