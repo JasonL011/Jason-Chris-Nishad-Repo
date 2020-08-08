@@ -23,6 +23,11 @@ public class You {
 		cart.add(food);
 	}
 	
+	public void removeFromCart(Food food) {
+		
+		cart.remove(food);
+	}
+	
 	
 	public boolean getPick() {
 		
