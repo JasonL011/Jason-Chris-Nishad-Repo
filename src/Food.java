@@ -30,6 +30,6 @@ public class Food {
 	public void draw(PApplet marker, float x, float y) {
 		
 		PImage image = marker.loadImage(filename);
-		marker.image(image, x, y, 40, 40);
+		marker.image(image, x, y, 100, 100);
 	}
 }

@@ -1,17 +1,16 @@
 import java.util.ArrayList;
 
 import processing.core.PApplet;
-import processing.core.PImage;
 
 public class Restaurant {
 	
-	private PImage image;
+	private String fileName;
 	private String name;
 	private ArrayList<Food> menu = new ArrayList<Food>();
 	
-	public Restaurant(String name, PImage image, ArrayList<Food> menu) {
+	public Restaurant(String name, String fileName, ArrayList<Food> menu) {
 		this.name = name;
-		this.image = image;
+		this.fileName = fileName;
 		this.menu = menu;
 	}
 	
@@ -19,8 +18,8 @@ public class Restaurant {
 		return name;
 	}
 	
-	public PImage getImage() {
-		return image;
+	public String getFileName() {
+		return fileName;
 	}
 	
 	public ArrayList<Food> getMenu() {
@@ -30,21 +29,23 @@ public class Restaurant {
 	public void drawMenu(PApplet marker) {
 		
 		marker.fill(0);
+		marker.textSize(15);
+		marker.rect(1250, 0, 1, 10000);
 		int x = 30; 
 		int y = 30;
 		for(Food e : menu) {
 			
-			marker.text(e.getName(), x, y);
-			marker.text(e.getCalories() + "", x, y+30);
-			e.draw(marker, x , y + 40);
 			
-			x += 100;
+			marker.text(e.getName() + " - " + e.getCalories(), x, y);
+			e.draw(marker, x , y + 12);
 			
-			if(x % 120 == 0) {
-				
-				
-				y += 100;
+			x += 200;
+			
+			if (x > 1200) {
+				x = 30;
+				y += 180;
 			}
+			
 			
 			
 		}
