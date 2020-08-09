@@ -87,7 +87,7 @@ public class CalorieHub extends PApplet {
 	                text("Return to Main", 30, 980);
 	               // text("Delete Item", 1280, 980);
 					fill(255);
-					text("Delete Item", 1280, 990);
+					text("Delete Item", 1280, 980);
 					
 					if(mouseButton == LEFT) {
 						
@@ -126,7 +126,7 @@ public class CalorieHub extends PApplet {
 						}
 						
 						
-						if(mouseX > 1280 && mouseX < 1430 && mouseY > 960 && mouseY < 990 && f == true) {
+						if(mouseX > 1280 && mouseX < 1430 && mouseY > 950 && mouseY < 980 && f == true) {
 							System.out.println("fdhjksflkhjasfdhkj");
 						
 							if( you.getCart().size() > 0) {
