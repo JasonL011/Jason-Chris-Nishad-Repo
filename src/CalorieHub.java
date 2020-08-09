@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 
 public class CalorieHub extends PApplet {
@@ -12,10 +13,10 @@ public class CalorieHub extends PApplet {
 	private Customer you;
 	private boolean f = true;
 	private boolean restaurantChosen = false;
-	
+	private PImage innoutpic;
 	public CalorieHub() {
 		
-		innout = new Restaurant("In n Out Burger", "in n out.jpeg", null);
+		innout = new Restaurant("In n Out Burger", "in n out.png", null);
 		you = new Customer(cart);
 		
 	}
@@ -31,16 +32,16 @@ public class CalorieHub extends PApplet {
 		fill(255);
 		textSize(40);
 		text("Total Calories in Cart: " + 0, 300, 900);
-		
+		innoutpic = loadImage("in n out.png");
 		
 	}
 	
 	public void draw() {
 		
-		innout.drawMenu(this);
-		you.drawCart(this);
+		
 		if(restaurantChosen) {
-					
+					innout.drawMenu(this);
+					you.drawCart(this);
 					rect(700, 960, 300, 50);
 					fill(0);
 					text("return item", 720, 990);
@@ -105,12 +106,21 @@ public class CalorieHub extends PApplet {
 		else {
 			
 			
+			image(innoutpic, 30,30 , 300,300 );
 			
-			
-			
-			
-			
-			
+			if(mouseButton == LEFT)	{
+				
+				if(mouseX < 330 && mouseX > 30 && mouseY < 330 && mouseY > 30) {
+					
+					restaurantChosen = true;
+					fill(211, 211, 211);
+					rect(0,0,10000,10000);
+					mouseX = 100000000;
+					mouseY = 1000000000;
+				}
+				
+				
+			}
 			
 		}
 	}
