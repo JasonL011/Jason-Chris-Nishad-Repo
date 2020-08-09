@@ -10,7 +10,7 @@ public class CalorieHub extends PApplet {
 	private Restaurant innout;
 	private ArrayList<Food> cart = new ArrayList<Food>();
 	private You you;
-	
+	private boolean f = true;
 	
 	public CalorieHub() {
 		
@@ -22,7 +22,7 @@ public class CalorieHub extends PApplet {
 	// The statements in the setup() function 
 	// execute once when the program begins
 	public void setup() {
-		
+		background(211,211,211);
 		innout.makeRes();
 		fill(211, 211, 211);
 		noStroke();
@@ -31,14 +31,16 @@ public class CalorieHub extends PApplet {
 		textSize(40);
 		text("Total Calories in Cart: " + 0, 300, 900);
 		
+		
 	}
 	
 	public void draw() {
 		
 		innout.drawMenu(this);
 		you.drawCart(this);
-		
-		
+		rect(700, 960, 300, 50);
+		fill(0);
+		text("return item", 720, 990);
 		
 		if(mouseButton == LEFT) {
 			
@@ -47,7 +49,7 @@ public class CalorieHub extends PApplet {
 			if(you.getPick() == true) {
 			for(int counter = 0; counter < 19; counter++ ) {
 				
-				if(((mouseX -30) / 200 == counter)  && mouseX < 1250) {
+				if(((mouseX -30) / 200 == counter)  && mouseX < 1250 && mouseY < 19/4 * 180) {
 					
 					counter += (((mouseY  - 42) / 180 )* 6);
 					
@@ -72,34 +74,31 @@ public class CalorieHub extends PApplet {
 				
 				you.drawCart(this);
 			}
-		}
-		
-		if(mouseButton == RIGHT) {
 			
-			you.timeout();
 			
-				for(int counter = 0; counter < you.getCart().size(); counter++ ) {
+			if(mouseX > 700 && mouseX < 1000 && mouseY < 1010 && mouseY > 960 && f == true) {
+				
+			
+				if(you.getPick() == false  && you.getCart().size() > 0) {
+					System.out.println(you.getCart().size());
+					you.removeFromCart(you.getCart().size() - 1);
+					fill(211, 211, 211);
+					rect(1280, 0 , 1000,10000);
 					
-					if((mouseX - 1280) / 150 == counter && you.getPick() ==true) {
-						
-						counter += (((mouseY  - 42) / 120 )* 3);
-
-						if(counter <= you.getCart().size())
-							you.removeFromCart(you.getCart().get(counter));
-						
-						//counter = 0;
-						System.out.println(counter + "    " +  you.getCart().size());
-						fill(211,211,211);
-						rect(1250, 0, 900, 10000);
-						you.drawCart(this);
+					you.drawCart(this);
 					
+					//f = false;
+					mouseX = 100000;
+					mouseY = 10000;
 				}
+				
 				
 			}
 			
-		
 		}
 		
+		
+	}
 		
 
 	}
@@ -107,4 +106,4 @@ public class CalorieHub extends PApplet {
 
 	
 
-}
+

@@ -23,9 +23,9 @@ public class You {
 		cart.add(food);
 	}
 	
-	public void removeFromCart(Food food) {
+	public void removeFromCart(int i) {
 		
-		cart.remove(food);
+		cart.remove(i);
 	}
 	
 	
