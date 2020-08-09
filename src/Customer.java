@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 import processing.core.PApplet;
 
-public class You {
+public class Customer {
 
 	private ArrayList<Food> cart = new ArrayList<Food>();
 	private boolean canPick = true;
 	private boolean overload = false;
 	private final int AVGCALORIECOUNT = 2400;
-	public You(ArrayList<Food> cart) {
+	public Customer(ArrayList<Food> cart) {
 		
 		this.cart = cart;
 	}
@@ -53,17 +53,16 @@ public class You {
 		
 		marker.fill(0);
 		marker.textSize(10);
-		marker.rect(1250, 0, 1, 1000);
 		int x = 1280; 
-		int y = 30;
+		int y = 80;
 		if(overload == false) {
 			for(Food e : cart) {
 				
-				
+				marker.textSize(15);
 				marker.text(e.getName() + " - " + e.getCalories(), x, y);
 				e.draw(marker, x , y + 12);
 				
-				x += 150;
+				x += 200;
 				
 				if (x >= 1850) {
 					x = 1280;
@@ -91,7 +90,7 @@ public class You {
 						
 				}
 				if (overload == true) {
-					marker.textSize(30);
+					marker.textSize(40);
 					marker.text("That is over the recommended daily average intake of calories!", 300, 950);
 				}
 				marker.fill(211, 211, 211);
@@ -100,6 +99,9 @@ public class You {
 				marker.fill(255);
 				marker.textSize(40);
 				marker.text("Total Calories in Cart: " + sum, 300, 900);
+				marker.fill(0);
+				marker.textSize(30);
+				marker.text("Your List", 1280, 30);
 	}
 }
 	
