@@ -23,7 +23,7 @@ public class CalorieHub extends PApplet {
 	// The statements in the setup() function 
 	// execute once when the program begins
 	public void setup() {
-		background(211,211,211);
+		//background(0);
 		innout.makeRes();
 		fill(211, 211, 211);
 		noStroke();
@@ -37,10 +37,10 @@ public class CalorieHub extends PApplet {
 	
 	public void draw() {
 		
-		
+		innout.drawMenu(this);
+		you.drawCart(this);
 		if(restaurantChosen) {
-					innout.drawMenu(this);
-					you.drawCart(this);
+					
 					rect(700, 960, 300, 50);
 					fill(0);
 					text("return item", 720, 990);
