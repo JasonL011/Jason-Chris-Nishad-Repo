@@ -45,7 +45,12 @@ public class Customer {
 			}
 		}
 	}
+	
+	public void resetCart() {
 		
+		cart.clear();
+		
+	}
 	
 	
 	

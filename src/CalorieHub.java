@@ -43,6 +43,7 @@ public class CalorieHub extends PApplet {
 					innout.drawMenu(this);
 					you.drawCart(this);
 					rect(700, 960, 300, 50);
+					rect(100, 960, 200, 50);
 					fill(0);
 					text("return item", 720, 990);
 					
@@ -51,9 +52,9 @@ public class CalorieHub extends PApplet {
 						you.timeout();
 						
 						if(you.getPick() == true) {
-						for(int counter = 0; counter < 19; counter++ ) {
+						for(int counter = 0; counter < innout.getMenu().size(); counter++ ) {
 							
-							if(((mouseX -30) / 200 == counter)  && mouseX < 1250 && mouseY < 19/4 * 180) {
+							if(((mouseX -30) / 200 == counter)  && mouseX < 1250 && mouseY < innout.getMenu().size()/4 * 180) {
 								
 								counter += (((mouseY  - 42) / 180 )* 6);
 								
@@ -96,6 +97,16 @@ public class CalorieHub extends PApplet {
 								mouseY = 10000;
 							}
 							
+							
+						}
+						
+						if(mouseX > 100 && mouseX < 300 && mouseY < 1010 && mouseY > 960) {
+							restaurantChosen = false;
+							fill(211, 211, 211);
+							rect(0,0,10000,10000);
+							you.resetCart();
+							mouseX = 100000;
+							mouseY = 10000;
 							
 						}
 						
