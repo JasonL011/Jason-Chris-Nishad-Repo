@@ -20,7 +20,8 @@ public class Customer {
 	
 	public void addtoCart(Food food) {
 		
-		cart.add(food);
+		if(overload == false) 
+			cart.add(food);
 	}
 	
 	public void removeFromCart(int i) {
@@ -35,19 +36,20 @@ public class Customer {
 	}
 	
 	public void timeout() {
-		if(overload == false) {
-			if(canPick == true) {
-				
-				canPick = false;
-			}else {
-				
-				canPick = true;
-			}
-		}
+//		if(overload == false) {
+//			if(canPick == true) {
+//				
+//				canPick = false;
+//			}else {
+//				
+//				canPick = true;
+//			}
+//		}
 	}
 	
 	public void resetCart() {
 		
+		overload = false;
 		cart.clear();
 		
 	}
@@ -56,7 +58,7 @@ public class Customer {
 	
 	public void drawCart(PApplet marker) {
 		
-		marker.fill(0);
+		marker.fill(255);
 		marker.textSize(10);
 		int x = 1280; 
 		int y = 80;
@@ -85,9 +87,10 @@ public class Customer {
 				int sum = 0;
 				
 				for(Food e: cart) {
-					if(sum < AVGCALORIECOUNT) {
-						sum += e.getCalories();
+					if(sum <= AVGCALORIECOUNT) {
 						overload = false;
+						sum += e.getCalories();
+						
 					}
 					else {
 						overload = true;
@@ -95,16 +98,23 @@ public class Customer {
 						
 				}
 				if (overload == true) {
+					marker.fill(0,255,255);
 					marker.textSize(40);
-					marker.text("That is over the recommended daily average intake of calories!", 300, 950);
+					marker.text("That is over the recommended daily average intake of calories!", 20, 950);
 				}
-				marker.fill(211, 211, 211);
+				else {
+					marker.fill(220, 20, 60);
+					marker.rect(20,900, 1230,100);
+					
+				}
+				
+				marker.fill(220, 20, 60);
 				marker.noStroke();
 				marker.rect(300, 860, 600, 50);
 				marker.fill(255);
 				marker.textSize(40);
 				marker.text("Total Calories in Cart: " + sum, 300, 900);
-				marker.fill(0);
+				
 				marker.textSize(30);
 				marker.text("Your List", 1280, 30);
 	}
