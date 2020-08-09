@@ -165,10 +165,15 @@ public class CalorieHub extends PApplet {
 				}
 		else {
 			
+			fill(220, 20, 60);
+			stroke(0);
+			strokeWeight(2);
+			rect(30, 5, 160, 30);
 			fill(255);
 	        text("Calorie Hub", 30, 30);
-			image(innoutpic, 30, 80, 300,200 );
-			image(pandapic, 30, 350 , 300, 300 );
+	        text("Select a restaurant", 30, 65);
+			image(innoutpic, 30, 80, 300, 200 );
+			image(pandapic, 30, 350 , 300, 300);
 			
 			if(mouseButton == LEFT)	{
 				
