@@ -169,6 +169,7 @@ public class CalorieHub extends PApplet {
 			stroke(0);
 			strokeWeight(2);
 			rect(30, 5, 160, 30);
+			noStroke();
 			fill(255);
 	        text("Calorie Hub", 30, 30);
 	        text("Select a restaurant", 30, 65);
