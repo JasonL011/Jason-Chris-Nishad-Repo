@@ -28,14 +28,14 @@ public class CalorieHub extends PApplet {
 	// The statements in the setup() function 
 	// execute once when the program begins
 	public void setup() {
-		background(255);
+		background(220, 20, 60);
 		
 		
 	
 		noStroke();
 		rect(300, 860, 600, 50);
 		
-		textSize(40);
+		textSize(30);
 		text("Total Calories in Cart: " + 0, 300, 900);
 		innoutpic = loadImage("in n out.png");
 		pandapic = loadImage("panda.png");
@@ -153,6 +153,7 @@ public class CalorieHub extends PApplet {
 							//rect(30, 900, 300, 50);
                             rect(0,0, 10000,10000);
 							you.resetCart();
+							background(220, 20, 60);
 							mouseX = 100000;
 							mouseY = 10000;
 							
@@ -164,7 +165,7 @@ public class CalorieHub extends PApplet {
 				}
 		else {
 			
-			fill(255, 178, 102);
+			fill(255);
 	        text("Calorie Hub", 30, 30);
 			image(innoutpic, 30, 80, 300,200 );
 			image(pandapic, 30, 350 , 300, 300 );
