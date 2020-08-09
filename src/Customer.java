@@ -99,12 +99,12 @@ public class Customer {
 				}
 				if (overload == true) {
 					marker.fill(0,255,255);
-					marker.textSize(40);
-					marker.text("That is over the recommended daily average intake of calories!", 20, 950);
+					marker.textSize(30);
+					marker.text("That is over the recommended daily average intake of calories!", 30, 930);
 				}
 				else {
 					marker.fill(220, 20, 60);
-					marker.rect(20,900, 1230,100);
+					marker.rect(20,870, 1230,100);
 					
 				}
 				
@@ -112,8 +112,8 @@ public class Customer {
 				marker.noStroke();
 				marker.rect(300, 860, 600, 50);
 				marker.fill(255);
-				marker.textSize(40);
-				marker.text("Total Calories in Cart: " + sum, 300, 900);
+				marker.textSize(30);
+				marker.text("Total Calories in Cart: " + sum, 30, 900);
 				
 				marker.textSize(30);
 				marker.text("Your List", 1280, 30);

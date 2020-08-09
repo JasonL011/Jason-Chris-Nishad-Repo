@@ -20,7 +20,7 @@ public class CalorieHub extends PApplet {
 	public CalorieHub() {
 		
 		innout = new Restaurant("In n Out Burger", "in n out.png", null);
-		pandaExpress = new Restaurant("Panda Express", "in n out.png", null);
+		pandaExpress = new Restaurant("Panda Express", "panda.png", null);
 		you = new Customer(cart);
 		
 	}
@@ -38,7 +38,7 @@ public class CalorieHub extends PApplet {
 		textSize(40);
 		text("Total Calories in Cart: " + 0, 300, 900);
 		innoutpic = loadImage("in n out.png");
-		pandapic = loadImage("panda.jpg");
+		pandapic = loadImage("panda.png");
 		
 	}
 	
@@ -87,7 +87,7 @@ public class CalorieHub extends PApplet {
 	                text("Return to Main", 30, 980);
 	               // text("Delete Item", 1280, 980);
 					fill(255);
-					text("return item", 720, 990);
+					text("Delete Item", 1280, 990);
 					
 					if(mouseButton == LEFT) {
 						
@@ -126,7 +126,7 @@ public class CalorieHub extends PApplet {
 						}
 						
 						
-						if(mouseX > 720 && mouseX < 900 && mouseY > 960 && mouseY < 990 && f == true) {
+						if(mouseX > 1280 && mouseX < 1430 && mouseY > 960 && mouseY < 990 && f == true) {
 							System.out.println("fdhjksflkhjasfdhkj");
 						
 							if( you.getCart().size() > 0) {
@@ -164,15 +164,14 @@ public class CalorieHub extends PApplet {
 				}
 		else {
 			
-			   fill(255, 153, 153);
-	            text("Calorie Hub", 30, 30);
-	            fill(255, 153, 153);
-			image(innoutpic, 30,30 , 300,300 );
-			image(pandapic, 30,400 , 300,300 );
+			fill(255, 178, 102);
+	        text("Calorie Hub", 30, 30);
+			image(innoutpic, 30, 80, 300,200 );
+			image(pandapic, 30, 350 , 300, 300 );
 			
 			if(mouseButton == LEFT)	{
 				
-				if(mouseX < 330 && mouseX > 30 && mouseY < 330 && mouseY > 30) {
+				if(mouseX < 330 && mouseX > 30 && mouseY < 280 && mouseY > 80) {
 					
 					reschose = "In n Out Burger";
 					
@@ -183,7 +182,7 @@ public class CalorieHub extends PApplet {
 					mouseY = 1000000000;
 				}
 				
-				if(mouseX < 330 && mouseX > 30 && mouseY < 700 && mouseY > 400) {
+				if(mouseX < 330 && mouseX > 30 && mouseY < 650 && mouseY > 350) {
 					
 					reschose = "Panda Express";
 					

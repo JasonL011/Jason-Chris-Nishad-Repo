@@ -87,9 +87,8 @@ public class Restaurant {
 	public void drawMenu(PApplet marker) {
 		
 		
-		marker.textSize(15);
 		marker.rect(1250, 0, 2, 10000);
-		marker.textSize(20);
+		marker.textSize(30);
 		marker.fill(255);
 		marker.text("Menu", 30, 30);
 		

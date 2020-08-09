@@ -8,7 +8,7 @@ import processing.core.PApplet;
 public class Main {
 
 	public static void main(String args[]) {
-
+		
 		CalorieHub drawing = new CalorieHub();
 		PApplet.runSketch(new String[]{""}, drawing);
 		PSurfaceAWT surf = (PSurfaceAWT) drawing.getSurface();
